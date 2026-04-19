@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <h1 >LOGIN</h1>
+        <div class="inner">
+            <form id="myForm" action="home.html" method="get">
+            <input type="text" id="username" name="username" placeholder="Enter your Name" required>
+            <br>
+            <br>
+            <input type="password" id="password" placeholder="Enter password">
+            <label>
+                <input type="checkbox" class="box">Remember password
+            </label>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
+
+  // Enter in username → go to password
+  username.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      password.focus();
+    }
+  });
+
+  // Enter in password → submit form
+  password.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      document.getElementById("myForm").submit();
+    }
+  });
+</script>
+</body>
+</html>
