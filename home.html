@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: rgb(82, 166, 239);
+        }
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .wel{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="wel">
+       <h1>Welcome <span id="name"></span></h1> 
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get("username");
+        document.getElementById("name").textContent = username || "User";
+        
+    </script>
+    
+</body>
+</html>
